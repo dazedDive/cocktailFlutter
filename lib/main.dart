@@ -1,5 +1,6 @@
 import 'package:cocktail_app/components/Footer.dart';
 import 'package:cocktail_app/components/Navigation.dart';
+import 'package:cocktail_app/screens/HomePage.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -18,9 +19,16 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
       primarySwatch: Colors.lime,
       ),
-      home:  Container(
-        alignment: Alignment.topCenter,
-        child: const Navigation()),
+      home: Scaffold(
+        appBar:const PreferredSize(
+          preferredSize: Size.fromHeight(80),
+          child: Navigation()),
+      body:  const HomePage(),
+      bottomNavigationBar: Container(
+        height: 30,
+        child: const Footer(),
+      ),
+      backgroundColor: Color.fromARGB(255, 108, 137, 94),),
     );
   }
 }
